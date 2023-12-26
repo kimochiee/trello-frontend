@@ -33,7 +33,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 34, height: 34 }} src="https://picsum.photos/536/354" alt="Trello avatar" />
+          <Avatar sx={{ width: 36, height: 36 }} src="https://picsum.photos/536/354" alt="Trello avatar" />
         </IconButton>
       </Tooltip>
       <Menu
