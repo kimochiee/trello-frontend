@@ -12,6 +12,8 @@ import FilterListIcon from '@mui/icons-material/FilterList'
 import Tooltip from '@mui/material/Tooltip'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
+import { capitalizeFirstLetter } from '~/utils/formater'
+
 const MENU_STYLES = {
   color: 'white',
   bgcolor: 'transparent',
@@ -26,7 +28,7 @@ const MENU_STYLES = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box sx={{
       width: '100%',
@@ -41,8 +43,8 @@ function BoardBar() {
       '&::-webkit-scrollbar-track': { m: 2 }
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label="kendystar147" onClick={() => { }} />
-        <Chip sx={MENU_STYLES} icon={<VpnLockIcon />} label="Public/Private Workspace" onClick={() => { }} />
+        <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label={board?.title} onClick={() => { }} />
+        <Chip sx={MENU_STYLES} icon={<VpnLockIcon />} label={capitalizeFirstLetter(board?.type)} onClick={() => { }} />
         <Chip sx={MENU_STYLES} icon={<AddToDriveIcon />} label="Add Google Drive" onClick={() => { }} />
         <Chip sx={MENU_STYLES} icon={<BoltIcon />} label="Automation" onClick={() => { }} />
         <Chip sx={MENU_STYLES} icon={<FilterListIcon />} label="Filter" onClick={() => { }} />
